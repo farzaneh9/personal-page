@@ -6,27 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name's Personal Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
+        /* ... (your existing styles) */
+        .contact-info {
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -38,8 +21,28 @@
 
     <div class="container">
         <h2>Hello, World!</h2>
-        <p>This is a simple personal page created by <strong>Your Name</strong>.</p>
+        <button id="showContactBtn">Show Contact Information</button>
+        <div class="contact-info" id="contactInfo">
+            <h3>Contact Information</h3>
+            <p>Email: your.email@example.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
     </div>
+
+    <script>
+        const showContactBtn = document.getElementById('showContactBtn');
+        const contactInfo = document.getElementById('contactInfo');
+
+        showContactBtn.addEventListener('click', () => {
+            if (contactInfo.style.display === 'none' || contactInfo.style.display === '') {
+                contactInfo.style.display = 'block';
+                showContactBtn.textContent = 'Hide Contact Information';
+            } else {
+                contactInfo.style.display = 'none';
+                showContactBtn.textContent = 'Show Contact Information';
+            }
+        });
+    </script>
 </body>
 
 </html>
