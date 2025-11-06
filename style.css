@@ -60,9 +60,11 @@ body {
 
         .main{
             display: flex;
-            width: 90%;
+            ;
+            width: 100%;
             text-align: center;
-            justify-content: space-between;
+            justify-content:center;
+            /* justify-items: center; */
             /* align-items: center; */
             margin-top: 0px;
             margin-bottom: 0;
