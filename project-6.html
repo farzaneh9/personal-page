@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARZANEH AMROLLAHI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;1,600&family=Noto+Serif+JP:wght@300;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;1,600&family=Maven+Pro:wght@400;700&family=Noto+Serif+JP:wght@300;700&display=swap" rel="stylesheet">   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="style.css">  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+
+<style>
+.gallery-img {
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 0 20px #aaa;
+  /* Remove border-radius if you want sharp corners */
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #aaa;
+}
+#galleryOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 30, 30, 0.95);
+  z-index: 1050;
+  /* Use flex column to center content vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#galleryOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+}
+#galleryOverlay .gallery-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 96vw;
+  position: relative;
+  margin-top: 30px;
+}
+#galleryZoomImg {
+  /* Remove transform scale for sizing, use only max-width/max-height */
+  transition: opacity 0.4s;
+  opacity: 0;
+  max-width: 280vw;   /* allow image to be up to 2x viewport width */
+  max-height: 240vh;  /* allow image to be up to 2x viewport height */
+  margin-bottom: 2rem;
+  margin-top: 80px;
+  display: block;
+}
+#galleryOverlay.active #galleryZoomImg {
+  opacity: 1;
+  /* Limit scale to 1.5 to avoid overlap, or use max-width/max-height for control */
+  transform: scale(1.9);
+  
+}
+.gallery-caption {
+  color: #fff;
+  text-align: center;
+  margin-top: 4.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  z-index: 0;
+  display: block;
+}
+.gallery-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  z-index: 0;
+}
+.gallery-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.gallery-thumb.active {
+  opacity: 1;
+  border-color: #fff;
+}
+</style>
+
+
+
+</head>
+
+<body> 
+    
+
+    <div class="container">
+
+        <header style="margin-bottom: 9rem;">
+            <div class="nav">
+                <a href="./index.html" class="nav-item" data-en="PROJECTS" data-zh="项目">PROJECTS</a>
+                <a href="./About.html" class="nav-item" data-en="ABOUT" data-zh="关于">ABOUT</a>
+                <a href="./contact.html" class="nav-item" data-en="CONTACT" data-zh="联系">CONTACT</a>
+                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中文</button>
+            </div>
+        </header>
+        
+
+        <div class="row align-items-center my-5">
+            <div class="col-md-5">
+                <img src="images/course website_thumb.png" alt="Project 1 Main" class="img-fluid rounded shadow-sm w-100 interactive-img">
+            </div>
+            <div class="col-md-5">
+                <h2 class="titles" data-en="3D Works" data-zh="三维作品">3D Works</h2>
+                <h4 style="color: rgb(142, 141, 144); font-size: 20px;" data-en="3D Modeling . Rendering . Post Production" data-zh="三维建模 · 渲染 · 后期制作">3D Modeling . Rendering . Post Production</h4>
+                <p class="p-project"
+                   data-en="This is an archive showcasing a variety of my 3D works focused on 3D visualization of objects and architectural spaces. Each piece demonstrates careful attention to detail and utilizes industry-standard software to accurately recreate real-world items. The emphasis is on precise modeling and rendering, highlighting technical skill in digital representation."
+                   data-zh="这是一个展示我三维作品的档案，主要聚焦于物体和建筑空间的三维可视化。每件作品都体现了对细节的关注，并使用行业标准软件精准还原真实物品。重点在于精确建模与渲染，突出数字表现的技术能力。">
+                   This is an archive showcasing a variety of my 3D works focused on 3D visualization of objects and architectural spaces. Each piece demonstrates careful attention to detail and utilizes industry-standard software to accurately recreate real-world items. The emphasis is on precise modeling and rendering, highlighting technical skill in digital representation.
+                <br>
+                <br>
+                 <span class="skills-row">
+                  <span class="skills-label" data-en="Tools:" data-zh="工具：">Tools:</span>
+                  <span class="skills-text" data-en="3Ds max, Vray, Revit, Autocad, Photoshop" data-zh="3Ds max、Vray、Revit、AutoCAD、Photoshop">3Ds max, Vray, Revit, Autocad, Photoshop</span>
+                </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-section my-5">
+  <h3 data-en="Gallery" data-zh="作品集">Gallery</h3>
+  <div class="row row-cols-2 row-cols-md-4 g-1 justify-content-center" id="gallery" style="max-width: 900px; margin: 0 auto;">
+    <div class="col">
+      <img src="images/3d 1.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 1">
+    </div>
+    <div class="col">
+      <img src="images/3d 2.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 2">
+    </div>
+    <div class="col">
+      <img src="images/3d 3.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 3">
+    </div>
+    <div class="col">
+      <img src="images/3d 4.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 4">
+    </div>
+  </div>
+  <div class="row row-cols-2 row-cols-md-4 g-1 justify-content-center" style="max-width: 900px; margin: 0 auto;">
+    <div class="col">
+      <img src="images/3d 5.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 5">
+    </div>
+    <div class="col">
+      <img src="images/3d 6.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 6">
+    </div>
+    <div class="col">
+      <img src="images/3d 7.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 7">
+    </div>
+    <div class="col">
+      <img src="images/3d 8.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 8">
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Overlay -->
+<div id="galleryOverlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,30,30,0.95); z-index:1050;">
+  <button id="galleryPrev" type="button" style="position:absolute; left:2vw; top:50%; transform:translateY(-50%); font-size:2rem; background:none; border:none; color:#fff; cursor:pointer; z-index:10;">&#8592;</button>
+  <div class="gallery-modal-content">
+    <img id="galleryZoomImg" src="" alt="Zoomed">
+    <div class="gallery-caption" id="galleryCaption"></div>
+    <div class="gallery-thumbs" id="galleryThumbs"></div>
+  </div>
+  <button id="galleryNext" style="position:absolute; right:2vw; top:50%; transform:translateY(-50%); font-size:2rem; background:none; border:none; color:#fff; cursor:pointer;">&#8594;</button>
+  <button id="galleryClose" style="position:absolute; top:2vh; right:2vw; font-size:2rem; background:none; border:none; color:#fff; cursor:pointer;">&times;</button>
+</div>
+
+        
+        </div>
+
+          <footer class="text-center py-4 mt-5" style=" border-top: 1px solid #b0b0b0;">
+        <p class="footer" data-en="&copy; Design and code by Farzaneh Amrollahi" data-zh="&copy; 由Farzaneh Amrollahi设计和编写">© Design and code by Farzaneh Amrollahi</p>
+    </footer>
+
+    <script src="lang-switch.js"></script>
+     <script>
+  // Add this to enable translation for elements with data-en/data-zh attributes
+  document.addEventListener('DOMContentLoaded', function() {
+    const langSwitch = document.getElementById("lang-switch");
+    let currentLang = "en";
+    langSwitch.addEventListener("click", function() {
+      currentLang = currentLang === "en" ? "zh" : "en";
+      document.querySelectorAll("[data-en][data-zh]").forEach(function(el) {
+        el.textContent = el.getAttribute("data-" + currentLang);
+      });
+      langSwitch.textContent = currentLang === "en" ? "中文" : "EN";
+    });
+  });
+</script>
+
+    <script>
+  // Gallery data: add captions for each image
+  // Fix: Only select gallery images once, not inside each row
+  const galleryImgs = Array.from(document.querySelectorAll('.gallery-img'));
+  const galleryData = galleryImgs.map(img => ({
+    src: img.src,
+    alt: img.alt,
+    caption: img.alt
+  }));
+
+  const overlay = document.getElementById('galleryOverlay');
+  const zoomImg = document.getElementById('galleryZoomImg');
+  const prevBtn = document.getElementById('galleryPrev');
+  const nextBtn = document.getElementById('galleryNext');
+  const closeBtn = document.getElementById('galleryClose');
+  const caption = document.getElementById('galleryCaption');
+  const thumbs = document.getElementById('galleryThumbs');
+  let currentIdx = 0;
+
+  // Build thumbnail strip
+  thumbs.innerHTML = galleryData.map((img, idx) =>
+    `<img src="${img.src}" class="gallery-thumb" data-idx="${idx}" alt="">`
+  ).join('');
+  const thumbImgs = Array.from(thumbs.querySelectorAll('.gallery-thumb'));
+
+  function showOverlay(idx) {
+    currentIdx = idx;
+    zoomImg.src = galleryData[idx].src;
+    caption.textContent = galleryData[idx].caption;
+    overlay.classList.add('active');
+    overlay.style.display = 'flex';
+    thumbImgs.forEach((thumb, i) => {
+      thumb.classList.toggle('active', i === idx);
+    });
+  }
+
+  galleryImgs.forEach((img, idx) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => showOverlay(idx));
+  });
+
+  // Fix: Remove e.stopPropagation() from prevBtn event handler
+  prevBtn.addEventListener('click', (e) => {
+    currentIdx = (currentIdx - 1) % galleryData.length;
+    showOverlay(currentIdx);
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIdx = (currentIdx + 1) % galleryData.length;
+    showOverlay(currentIdx);
+  });
+
+  closeBtn.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    setTimeout(() => { overlay.style.display = 'none'; zoomImg.src = ''; }, 400);
+  });
+
+  thumbs.addEventListener('click', (e) => {
+    if (e.target.classList.contains('gallery-thumb')) {
+      showOverlay(Number(e.target.dataset.idx));
+    }
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+      setTimeout(() => { overlay.style.display = 'none'; zoomImg.src = ''; }, 400);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (overlay.classList.contains('active')) {
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'Escape') closeBtn.click();
+    }
+  });
+</script>
+</body>
+
+</html>
