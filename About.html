@@ -127,7 +127,7 @@
                 <a href="./index.html" class="nav-item">PROJECTS</a>
                 <a href="./About.html" class="nav-item">ABOUT</a>
                 <a href="./contact.html" class="nav-item">CONTACT</a>
-                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中文</button>
+                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中</button>
             </div>
         </header>
 
@@ -336,7 +336,7 @@
       document.querySelectorAll("[data-en][data-zh]").forEach(function(el) {
         el.textContent = el.getAttribute("data-" + currentLang);
       });
-      langSwitch.textContent = currentLang === "en" ? "中文" : "EN";
+      langSwitch.textContent = currentLang === "en" ? "中" : "EN";
     });
   });
 </script>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProDay App</title>
+    <title>Farzaneh--ProDay App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -68,17 +68,17 @@
                 <a href="./index.html" class="nav-item" data-en="PROJECTS" data-zh="项目">PROJECTS</a>
                 <a href="./About.html" class="nav-item" data-en="ABOUT" data-zh="关于">ABOUT</a>
                 <a href="./contact.html" class="nav-item" data-en="CONTACT" data-zh="联系">CONTACT</a>
-                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中文</button>
+                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中</button>
             </div>
         </header>
         
         
         <!-- Project main info row -->
         <div class="row align-items-center my-5">
-            <div class="col-md-5">
+            <!-- <div class="col-md-5">
                 <img src="images/proday-thumbnail.png" alt="Project 1 Main" class="img-fluid rounded shadow-sm w-100 interactive-img">
-            </div>
-            <div class="col-md-5">
+            </div> -->
+            <div class="col-md-6">
                 <h2 class="titles" data-en="ProDay" data-zh="ProDay">ProDay</h2>
                 <h4 style="color: rgb(142, 141, 144); font-size: 20px;" data-en="UI Design . Graphic Design" data-zh="界面设计 · 平面设计">UI Design . Graphic Design </h4>
                 <p class="p-project"
@@ -147,7 +147,7 @@
            data-en="Experience the design" data-zh="体验设计">
            Experience the design <i data-lucide="arrow-big-down-dash" style="width: 44px; height: 44px;"></i>
         </p>
-          <iframe class="d-block mx-auto"  style="border: 1px solid rgba(0, 0, 0, 0.1);" width="410" height="960" src="https://embed.figma.com/proto/kxfjj2KoS1016aIDHCvBGg/Proday---Refined?page-id=0%3A1&node-id=1-83&viewport=-1428%2C-313%2C0.48&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A83&embed-host=share" allowfullscreen></iframe>
+          <iframe class="d-block mx-auto"  style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="650" src="https://embed.figma.com/proto/kxfjj2KoS1016aIDHCvBGg/Proday---Refined?page-id=0%3A1&node-id=1-83&viewport=-1428%2C-313%2C0.48&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A83&embed-host=share" allowfullscreen></iframe>
         
         </div>
         
@@ -168,7 +168,7 @@
       document.querySelectorAll("[data-en][data-zh]").forEach(function(el) {
         el.textContent = el.getAttribute("data-" + currentLang);
       });
-      langSwitch.textContent = currentLang === "en" ? "中文" : "EN";
+      langSwitch.textContent = currentLang === "en" ? "中" : "EN";
     });
   });
 </script>

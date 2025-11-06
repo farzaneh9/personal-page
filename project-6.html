@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Archive</title>
+    <title>Farzaneh--3D Archive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -127,16 +127,16 @@
                 <a href="./index.html" class="nav-item" data-en="PROJECTS" data-zh="项目">PROJECTS</a>
                 <a href="./About.html" class="nav-item" data-en="ABOUT" data-zh="关于">ABOUT</a>
                 <a href="./contact.html" class="nav-item" data-en="CONTACT" data-zh="联系">CONTACT</a>
-                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中文</button>
+                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中</button>
             </div>
         </header>
         
 
         <div class="row align-items-center my-5">
-            <div class="col-md-5">
+            <!-- <div class="col-md-5">
                 <img src="images/course website_thumb.png" alt="Project 1 Main" class="img-fluid rounded shadow-sm w-100 interactive-img">
-            </div>
-            <div class="col-md-5">
+            </div> -->
+            <div class="col-md-6">
                 <h2 class="titles" data-en="3D Works" data-zh="三维作品">3D Works</h2>
                 <h4 style="color: rgb(142, 141, 144); font-size: 20px;" data-en="3D Modeling . Rendering . Post Production" data-zh="三维建模 · 渲染 · 后期制作">3D Modeling . Rendering . Post Production</h4>
                 <p class="p-project"
@@ -154,33 +154,33 @@
         </div>
 
         <div class="gallery-section my-5">
-  <h3 data-en="Gallery" data-zh="作品集">Gallery</h3>
+  <h3 data-en="Gallery" data-zh="作品集"  style=" margin-bottom: 40px;">Gallery</h3>
   <div class="row row-cols-2 row-cols-md-4 g-1 justify-content-center" id="gallery" style="max-width: 900px; margin: 0 auto;">
     <div class="col">
-      <img src="images/3d 1.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 1">
+      <img src="images/3d 1.jpg" class="gallery-img img-fluid rounded shadow-sm" style=" margin-bottom: 40px;" alt="">
     </div>
     <div class="col">
-      <img src="images/3d 2.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 2">
+      <img src="images/3d 2.png" class="gallery-img img-fluid rounded shadow-sm" alt="">
     </div>
     <div class="col">
-      <img src="images/3d 3.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 3">
+      <img src="images/3d 3.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="">
     </div>
     <div class="col">
-      <img src="images/3d 4.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 4">
+      <img src="images/3d 4.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="">
     </div>
   </div>
   <div class="row row-cols-2 row-cols-md-4 g-1 justify-content-center" style="max-width: 900px; margin: 0 auto;">
     <div class="col">
-      <img src="images/3d 5.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 5">
+      <img src="images/3d 5.png" class="gallery-img img-fluid rounded shadow-sm" alt="">
     </div>
     <div class="col">
-      <img src="images/3d 6.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 6">
+      <img src="images/3d 6.png" class="gallery-img img-fluid rounded shadow-sm" alt="">
     </div>
     <div class="col">
-      <img src="images/3d 7.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 7">
+      <img src="images/3d 7.png" class="gallery-img img-fluid rounded shadow-sm" alt="">
     </div>
     <div class="col">
-      <img src="images/3d 8.png" class="gallery-img img-fluid rounded shadow-sm" alt="Gallery 8">
+      <img src="images/3d 8.png" class="gallery-img img-fluid rounded shadow-sm" alt="">
     </div>
   </div>
 </div>
@@ -215,7 +215,7 @@
       document.querySelectorAll("[data-en][data-zh]").forEach(function(el) {
         el.textContent = el.getAttribute("data-" + currentLang);
       });
-      langSwitch.textContent = currentLang === "en" ? "中文" : "EN";
+      langSwitch.textContent = currentLang === "en" ? "中" : "EN";
     });
   });
 </script>

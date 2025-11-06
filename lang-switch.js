@@ -8,7 +8,7 @@
         <br>
         <a href="./About.html" class="about" id="about-link">More About me</a>`,
       aboutLink: "More About me",
-      langBtn: "中文"
+      langBtn: "中"
     },
     zh: {
       mainDesc: `<span class="name">若溪</span>
