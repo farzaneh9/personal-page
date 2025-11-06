@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARZANEH AMROLLAHI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;1,600&family=Noto+Serif+JP:wght@300;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;1,600&family=Maven+Pro:wght@400;700&family=Noto+Serif+JP:wght@300;700&display=swap" rel="stylesheet">   
+<link rel="stylesheet" href="style.css">  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+<script type="text/javascript" src="https://www.bing.com/translator/api/language/TranslateWidget"></script>
+
+ <!-- Load Lucide icons (preferred) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+   <style>
+        /* --- General Styling & Font Setup --- */
+        :root {
+            --accent-color: #A160E1; /* Primary requested color: Violet */
+            --dark-accent: #6A1B9A;  /* Deep Violet for contrast (used sparingly) */
+        }
+        /* body {
+            font-family: 'Rubik', sans-serif;
+            background-color: white;
+            line-height: 1.6;
+            margin: auto;
+        } */
+        
+        /* Removed all shadow and border from the main wrapper */
+        .resume-wrapper {
+            box-shadow: none; 
+            border: none !important;
+        }
+
+        /* --- Accent Colors --- */
+        .accent-text {
+            color: var(--accent-color); /* Primary accent color for highlights */
+        }
+        
+        /* --- Section Headers --- */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e9ecef; 
+            padding-bottom: 0.5rem;
+        }
+        .icon-wrapper {
+            background-color: rgba(161, 96, 225, 0.1); /* Lightened accent color background */
+            border-radius: 50%;
+            padding: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-wrapper .lucide { /* Targeting Lucide icons */
+            stroke: var(--accent-color); /* Accent icon color */
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Timeline Styling (static, no animation) --- */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+            opacity: 1; 
+            transform: translateY(0); 
+            transition: none; 
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 3px solid white; 
+            box-shadow: 0 0 0 1px var(--accent-color);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 15px;
+            bottom: -10px; 
+            width: 2px;
+            background-color: #dee2e6;
+        }
+        
+        /* --- Skills List --- */
+        .skill-list-item {
+            padding-left: 0.25rem;
+            transition: none; 
+        }
+
+        /* Adjust the container margin to match the user's homepage style */
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .intro{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px auto;
+            
+        }
+    </style>
+</head>
+
+<body> 
+    
+
+    <div class="container">
+
+        <header>
+            <div class="nav">
+                <a href="./index.html" class="nav-item">PROJECTS</a>
+                <a href="./About.html" class="nav-item">ABOUT</a>
+                <a href="./contact.html" class="nav-item">CONTACT</a>
+                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中文</button>
+            </div>
+        </header>
+
+
+        <div class="row align-items-center my-5">
+            <div class="intro justify-content-center" style="margin-top: 100px; width: 100%; margin-left: auto; margin-right: auto;">
+                <div class="col-md-3">
+                    <img src="images/farzaneh2 copy.jpg" alt="Project 1 Main" class="img-fluid rounded shadow-sm w-80">
+                </div>
+                <div class="col-md-6" style="margin-top: 40px;">
+                    <h2 class="titles" data-en="FARZANEH AMROLLAHI" data-zh="若溪">FARZANEH AMROLLAHI</h2>
+                    <p class="p-project"
+                       data-en="Enthusiastic and detail-oriented graduate student with a strong interest in design and international trade. Passionate about product design, global business operations, and cross-cultural communication. Skilled in design, content creation, and global communication, with a keen interest in integrating creativity with business strategies."
+                       data-zh="充满热情且注重细节的研究生，对设计和国际贸易有浓厚兴趣。热衷于产品设计、全球业务运营和跨文化交流。擅长设计、内容创作和全球沟通，善于将创意与商业策略结合。">
+                       Enthusiastic and detail-oriented graduate student with a strong interest in design and international trade. Passionate about product design, global business operations, and cross-cultural communication. Skilled in design, content creation, and global communication, with a keen interest in integrating creativity with business strategies.
+                    </p>
+                </div>
+            </div>
+            <!-- Main Content Sections (Flowing vertically) -->
+            <section class="bg-white p-4 p-lg-5 pt-0" style="width: 80%; max-width: 100%; margin-left: auto; margin-right: auto;">
+                <div>
+                    <!-- EDUCATION -->
+                    <div class="mb-5">
+                        <div class="section-header">
+                            <div class="icon-wrapper"><i data-lucide="graduation-cap" class="lucide"></i></div>
+                            <h2 class="h3 fw-bold text-dark mb-0" data-en="EDUCATION" data-zh="教育经历">EDUCATION</h2>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="h5 fw-semibold text-dark" data-en="ZHEJIANG UNIVERSITY" data-zh="浙江大学">ZHEJIANG UNIVERSITY</h3>
+                            <p class="small fw-medium text-secondary mb-0" style="padding: 10px 0;"
+                               data-en="Master in Industrial Design Engineering"
+                               data-zh="工业设计工程硕士">
+                               Master in Industrial Design Engineering
+                            </p>
+                            <p class="small text-muted mt-0 mb-0"
+                               data-en="September 2023 – March 2026"
+                               data-zh="2023年9月 – 2026年3月">
+                               September 2023 – March 2026
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="h5 fw-semibold text-dark" data-en="UNIVERSITY OF QOM (IRAN)" data-zh="库姆大学（伊朗）">UNIVERSITY OF QOM (IRAN)</h3>
+                            <p class="small fw-medium text-secondary mb-0" style="padding: 10px 0;"
+                               data-en="Bachelor in Architectural Engineering"
+                               data-zh="建筑工程学士">
+                               Bachelor in Architectural Engineering
+                            </p>
+                            <p class="small text-muted mt-0 mb-0"
+                               data-en="September 2016 – July 2020"
+                               data-zh="2016年9月 – 2020年7月">
+                               September 2016 – July 2020
+                            </p>
+                        </div>
+                    </div>
+                    <!-- SKILLS -->
+                    <div class="mb-5">
+                        <div class="section-header">
+                            <div class="icon-wrapper"><i data-lucide="sparkles" class="lucide"></i></div>
+                            <h2 class="h3 fw-bold text-dark mb-0" data-en="CORE SKILLS" data-zh="核心技能">CORE SKILLS</h2>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <h4 class="h5 fw-semibold text-dark mb-2 border-bottom pb-1"
+                                    data-en="Design & Tools" data-zh="设计与工具">Design & Tools</h4>
+                                <ul class="list-unstyled small text-secondary">
+                                    <li class="skill-list-item" data-en="UX/UI Design" data-zh="用户体验/界面设计">UX/UI Design</li>
+                                    <li class="skill-list-item" data-en="3D modeling/rendering" data-zh="三维建模/渲染">3D modeling/rendering</li>
+                                    <li class="skill-list-item" data-en="AI design / Animation making" data-zh="AI设计/动画制作">AI design / Animation making</li>
+                                    <li class="skill-list-item" data-en="Photoshop, Autocad, Microsoft office" data-zh="Photoshop、AutoCAD、微软办公软件">Photoshop, Autocad, Microsoft office</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h4 class="h5 fw-semibold text-dark mb-2 border-bottom pb-1"
+                                    data-en="Technical & Soft Skills" data-zh="技术与软技能">Technical & Soft Skills</h4>
+                                <ul class="list-unstyled small text-secondary">
+                                    <li class="skill-list-item" data-en="HTML & CSS" data-zh="HTML与CSS">HTML & CSS</li>
+                                    <li class="skill-list-item" data-en="Cross-cultural Communication" data-zh="跨文化交流">Cross-cultural Communication</li>
+                                    <li class="skill-list-item" data-en="Content Creation & Product Description" data-zh="内容创作与产品描述">Content Creation & Product Description</li>
+                                    <li class="skill-list-item" data-en="Detail-Oriented & Enthusiastic" data-zh="注重细节与热情">Detail-Oriented & Enthusiastic</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h4 class="h5 fw-semibold text-dark mb-2 border-bottom pb-1"
+                                    data-en="Language Skills" data-zh="语言技能">Language Skills</h4>
+                                <ul class="list-unstyled small text-secondary">
+                                    <li class="skill-list-item" data-en="English: Fluent" data-zh="英语：流利"><span class="fw-medium text-dark">English:</span> Fluent</li>
+                                    <li class="skill-list-item" data-en="Persian: Native" data-zh="波斯语：母语"><span class="fw-medium text-dark">Persian:</span> Native</li>
+                                    <li class="skill-list-item" data-en="Chinese: Intermediate" data-zh="中文：中级"><span class="fw-medium text-dark">Chinese:</span> Intermediate</li>
+                                    <li class="skill-list-item" data-en="Arabic/Korean: Simple communication skills" data-zh="阿拉伯语/韩语：简单交流能力"><span class="fw-medium text-dark">Arabic/Korean:</span> Simple communication skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- WORK EXPERIENCE -->
+                    <div class="mb-0">
+                        <div class="section-header">
+                            <div class="icon-wrapper"><i data-lucide="briefcase" class="lucide"></i></div>
+                            <h2 class="h3 fw-bold text-dark mb-0" data-en="WORK EXPERIENCE" data-zh="工作经历">WORK EXPERIENCE</h2>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h3 class="h5 fw-semibold text-dark" data-en="INTERNATIONAL SALES & CUSTOMER RELATIONS ASSISTANT" data-zh="国际销售与客户关系助理">INTERNATIONAL SALES & CUSTOMER RELATIONS ASSISTANT</h3>
+                                <span class="small text-muted ms-3 text-nowrap" data-en="2023.01–2023.08" data-zh="2023.01–2023.08">2023.01–2023.08</span>
+                            </div>
+                            <p class="small fw-medium text-secondary mb-0 mt-0" data-en="Kimiya (Iran)" data-zh="Kimiya（伊朗）">Kimiya (Iran)</p>
+                            <ul class="small text-secondary ps-0 mb-0">
+                                <li data-en="Assisted in communications with international clients." data-zh="协助与国际客户沟通。">Assisted in communications with international clients.</li>
+                                <li data-en="Translated business documents and correspondence." data-zh="翻译商务文件和往来信函。">Translated business documents and correspondence.</li>
+                                <li data-en="Created content for marketing and product descriptions." data-zh="为市场营销和产品描述创作内容。">Created content for marketing and product descriptions.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h3 class="h5 fw-semibold text-dark" data-en="FREELANCER DESIGNER" data-zh="自由设计师">FREELANCER DESIGNER</h3>
+                                <span class="small text-muted ms-3 text-nowrap" data-en="2022.01 – Present" data-zh="2022.01 – 至今">2022.01 – Present</span>
+                            </div>
+                            <p class="small fw-medium text-secondary mb-0 mt-0" data-en="Online" data-zh="线上">Online</p>
+                            <ul class="small text-secondary ps-0 mb-0">
+                                <li data-en="3D visualization and Animation." data-zh="三维可视化与动画。">3D visualization and Animation.</li>
+                                <li data-en="Architectural plans." data-zh="建筑设计图。">Architectural plans.</li>
+                                <li data-en="Graphic design/Web Design." data-zh="平面设计/网页设计。">Graphic design/Web Design.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h3 class="h5 fw-semibold text-dark " data-en="RESEARCH ASSISTANT" data-zh="研究助理">RESEARCH ASSISTANT</h3>
+                                <span class="small text-muted ms-3 text-nowrap" data-en="2022.02–2022.12" data-zh="2022.02–2022.12">2022.02–2022.12</span>
+                            </div>
+                            <p class="small fw-medium text-secondary mb-2" data-en="University of Qom" data-zh="库姆大学">University of Qom</p>
+                            <ul class="small text-secondary ps-0 mb-0">
+                                <li data-en="Created architectural drawings and 3D models." data-zh="绘制建筑图纸和三维模型。">Created architectural drawings and 3D models.</li>
+                                <li data-en="Assisted in design development and visual presentations." data-zh="协助设计开发和视觉展示。">Assisted in design development and visual presentations.</li>
+                                <li data-en="Collaborated with senior designers to refine project concepts." data-zh="与高级设计师合作完善项目概念。">Collaborated with senior designers to refine project concepts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- AWARDS SECTION -->
+                <div class="mb-5" style="margin-top: 64px;">
+                    <div class="section-header">
+                        <div class="icon-wrapper"><i data-lucide="award" class="lucide"></i></div>
+                        <h2 class="h3 fw-bold text-dark mb-0" data-en="AWARDS & RECOGNITION" data-zh="奖项与荣誉">AWARDS & RECOGNITION</h2>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 class="h5 fw-semibold text-dark mb-0" style="width: 90%;" data-en="China Collegiate Design Competition, Milan-YangMing Cultural and Creative Competition, Second Prize. Milan Design Week Exhibition" data-zh="中国大学生设计竞赛，米兰-阳明文创大赛二等奖，米兰设计周展览">China Collegiate Design Competition, Milan-YangMing Cultural and Creative Competition, Second Prize. Milan Design Week Exhibition</h3>
+                                <p class="small fw-medium text-secondary mb-0" data-en="Category: Product Design, Title: CalMing" data-zh="类别：产品设计，作品：CalMing">Category: Product Design, Title: CalMing</p>
+                            </div>
+                            <span class="small text-muted ms-3 text-nowrap" data-en="2024" data-zh="2024">2024</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 class="h5 fw-semibold text-dark mb-0" style="width: 90%;" data-en="World Eco-Design Conference (WEDC), Designing for Sustainable Development Exhibition, Vienna" data-zh="世界生态设计大会（WEDC），可持续发展设计展，维也纳">World Eco-Design Conference (WEDC), Designing for Sustainable Development Exhibition, Vienna</h3>
+                                <p class="small fw-medium text-secondary mb-0" data-en="Category: Product Design, Title: Interactive Play Hub" data-zh="类别：产品设计，作品：互动游戏中心">Category: Product Design, Title: Interactive Play Hub</p>
+                            </div>
+                            <span class="small text-muted ms-3 text-nowrap" data-en="2024" data-zh="2024">2024</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 class="h5 fw-semibold text-dark mb-0" data-en="International Student's Honorary Title of Extracurricular Excellence" data-zh="国际学生课外优秀荣誉称号">International Student's Honorary Title of Extracurricular Excellence</h3>
+                                <p class="small fw-medium text-secondary mb-0" data-en="Zhejiang University" data-zh="浙江大学">Zhejiang University</p>
+                            </div>
+                            <span class="small text-muted ms-3 text-nowrap" data-en="2023-2024" data-zh="2023-2024">2023-2024</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 class="h5 fw-semibold text-dark mb-0" style="width: 90%;" data-en="International Student's Honorary Title of Excellence in Innovation and Entrepreneurship" data-zh="国际学生创新创业优秀荣誉称号">International Student's Honorary Title of Excellence in Innovation and Entrepreneurship</h3>
+                                <p class="small fw-medium text-secondary mb-0" data-en="Zhejiang University" data-zh="浙江大学">Zhejiang University</p>
+                            </div>
+                            <span class="small text-muted ms-3 text-nowrap" data-en="2023-2024" data-zh="2023-2024">2023-2024</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 class="h5 fw-semibold text-dark mb-0" data-en="Full Academic Scholarship" data-zh="全额学业奖学金">Full Academic Scholarship</h3>
+                                <p class="small fw-medium text-secondary mb-0" data-en="Zhejiang University" data-zh="浙江大学">Zhejiang University</p>
+                            </div>
+                            <span class="small text-muted ms-3 text-nowrap" data-en="2023" data-zh="2023">2023</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <footer class="text-center py-4 mt-4" style=" border-top: 1px solid #b0b0b0;">
+                    <p class="footer" data-en="&copy; Designed and Coded by Farzaneh Amrollahi" data-zh="&copy; 由Farzaneh Amrollahi设计和编写">© Designed and Coded by Farzaneh Amrollahi</p>
+                </footer>
+            </section>
+        </div>
+        </div>
+
+    <script src="lang.js"></script>
+    <script>
+  // Add this to enable translation for elements with data-en/data-zh attributes
+  document.addEventListener('DOMContentLoaded', function() {
+    const langSwitch = document.getElementById("lang-switch");
+    let currentLang = "en";
+    langSwitch.addEventListener("click", function() {
+      currentLang = currentLang === "en" ? "zh" : "en";
+      document.querySelectorAll("[data-en][data-zh]").forEach(function(el) {
+        el.textContent = el.getAttribute("data-" + currentLang);
+      });
+      langSwitch.textContent = currentLang === "en" ? "中文" : "EN";
+    });
+  });
+</script>
+
+        <!-- Script to initialize Lucide icons -->
+    <script>
+        // Use DOMContentLoaded to ensure all elements are ready before the icons are processed,
+        // which prevents timing issues in various browser environments.
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+
+</html>

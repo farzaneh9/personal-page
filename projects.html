@@ -20,6 +20,53 @@
 
   }  
 
+  /* Make cards square (remove rounded corners) */
+  .card, .card-img-top {
+    border-radius: 0 !important;
+  }
+
+  /* Card image container for overlay effect */
+  .card-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 250px;
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(50, 50, 50, 0.6);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .card:hover .card-overlay,
+  .card:focus-within .card-overlay {
+    opacity: 1;
+  }
+
+  .card-body {
+    display: none;
+  }
 </style>
 </head>
 
@@ -38,34 +85,37 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
               <div class="card h-100">
-                <img src="images/istockphoto-1144142614-612x612.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Project 1</h5>
-                  <p class="card-text">This is ...</p>
+                <div class="card-img-container">
+                  <img src="images/Baihu.jpg" class="card-img-top" alt="...">
+                  <div class="card-overlay">
+                    <h5 class="card-title">Project 1</h5>
+                    <p class="card-text">This is ...</p>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card h-100">
-                <img src="images/istockphoto-1144142614-612x612.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Project 2</h5>
-                  <p class="card-text">This is a short card.</p>
+                <div class="card-img-container">
+                  <img src="images/Screenshot 2025-08-24 101404.png" class="card-img-top" alt="...">
+                  <div class="card-overlay">
+                    <h5 class="card-title">Project 2</h5>
+                    <p class="card-text">This is a short card.</p>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card h-100">
-                <img src="images/istockphoto-1144142614-612x612.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Project 3</h5>
-                  <p class="card-text">This is ...</p>
+                <div class="card-img-container">
+                  <img src="images/calming-1.jpg" class="card-img-top" alt="...">
+                  <div class="card-overlay">
+                    <h5 class="card-title">Project 3</h5>
+                    <p class="card-text">This is ...</p>
+                  </div>
                 </div>
               </div>
             </div>
-
-            
-    
           </div>
         
        

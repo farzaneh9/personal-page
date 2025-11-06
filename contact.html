@@ -13,6 +13,149 @@
 <link rel="stylesheet" href="style.css">  
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Load Lucide icons (preferred) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+
+        .container{
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+        }
+        /* --- General Styling & Font Setup --- */
+        :root {
+            --accent-color: #A160E1; /* Primary requested color: Violet */
+            --dark-accent: #6A1B9A;  /* Deep Violet for contrast */
+        }
+        
+        
+        /* --- Accent Colors --- */
+        .accent-text {
+            color: var(--accent-color); 
+        }
+        .btn-violet {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .btn-violet:hover {
+            background-color: var(--dark-accent);
+            border-color: var(--dark-accent);
+            color: white;
+        }
+
+        /* --- Section Headers & Icons --- */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e9ecef; 
+            padding-bottom: 0.5rem;
+        }
+        .icon-wrapper {
+            background-color: rgba(161, 96, 225, 0.1); 
+            border-radius: 50%;
+            padding: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-wrapper .lucide { 
+            stroke: var(--accent-color); 
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Styling for the details section */
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start; 
+            margin-bottom: 0;
+            /* background: #f7f7fa; */
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+        }
+        .contact-detail-item .lucide {
+            stroke: var(--accent-color);
+            width: 22px;
+            height: 22px;
+            margin-right: 0.5rem;
+        }
+        .contact-section {
+          background: #fff;
+          padding: 3rem 2rem;
+          max-width: 1200px;
+          margin: 60px auto 0 auto;
+        }
+        .get-in-touch {
+          /* background: linear-gradient(90deg, #A160E1 0%, #6A1B9A 100%); */
+          color: #303030;
+          border-radius: 12px;
+          padding: 2rem 1.5rem;
+          margin-bottom: 2rem;
+          
+        }
+        .get-in-touch h2 {
+          color: #434343;
+          margin-bottom: 0;
+        }
+        .get-in-touch p {
+          color: #3c3c3c;
+          margin-bottom: 0;
+        }
+        .details.d-flex {
+          flex-wrap: wrap;
+          gap: 0;
+        }
+        .contact-detail-item {
+          /* flex: 1 1 ;
+          min-width: 220px;
+          max-width: 100%; */
+          margin-bottom: 1.2rem;
+          border-radius: 8px;
+          /* padding: 0.7rem 1rem; */
+          box-sizing: border-box;
+        }
+        @media (max-width: 992px) {
+          .contact-section {
+            padding: 2rem 0.5rem;
+            max-width: 100%;
+          }
+          .get-in-touch {
+            padding: 1.2rem 0.5rem;
+          }
+          .details.d-flex {
+            flex-direction: column;
+            gap: 0;
+          }
+          .contact-detail-item {
+            min-width: 0;
+            width: 100%;
+            margin-bottom: 0.8rem;
+          }
+        }
+        @media (max-width: 576px) {
+          .contact-section {
+            padding: 1rem 0.2rem;
+          }
+          .get-in-touch {
+            padding: 0.8rem 0.2rem;
+            font-size: 1rem;
+          }
+          .contact-detail-item {
+            padding: 0.5rem 0.5rem;
+            font-size: 0.95rem;
+          }
+          .section-header h2 {
+            font-size: 1.2rem;
+          }
+        }
+    </style>
+
 </head>
 
 
@@ -21,47 +164,190 @@
 
     <div class="container"  >
 
-        <header>
+       <header>
             <div class="nav">
-                <a href="./index.html" class="nav-item">HOME</a>
-                <a href="./projects.html" class="nav-item">PROJECTS</a>
+                <a href="./index.html" class="nav-item">PROJECTS</a>
+                <a href="./About.html" class="nav-item">ABOUT</a>
                 <a href="./contact.html" class="nav-item">CONTACT</a>
-              </div>
-             
+                <button id="lang-switch" class="btn btn-sm btn-outline-secondary ms-3" style="vertical-align: middle;">中文</button>
+            </div>
         </header>
-        
-        
-        <div class="main text-white">
-           <p>
-            Design dreams in your mind? Let's bring them to life. Feel free to get in touch!
-           </p>
-           
-           
+
+
+        <div class="contact-section">
+          <div>
+            <div class="">
+              <div class="get-in-touch d-flex flex-column align-items-start justify-content-between">
+                <div class="section-header border-0 mb-2">
+                  <div  style="background:rgba(255,255,255,0.15);"><i data-lucide="mail-check" class="lucide"></i></div>
+                  <h2 class="fw-bold mb-0" data-en="GET IN TOUCH" data-zh="联系我">GET IN TOUCH</h2>
+                </div>
+                <p class="h5 fw-normal" data-en="I'd love to hear about your projects and ideas." data-zh="欢迎分享您的项目和想法。">I'd love to hear about your projects and ideas.</p>
+              </div>
+            </div>
+            <div class="details d-flex">
+              <div class="contact-detail-item">
+                <i data-lucide="mail"></i>
+                <div>
+                  <h5 class="small fw-semibold mb-0" data-en="Email Address" data-zh="邮箱">Email Address</h5>
+                  <p class="small text-muted mb-0" data-en="far.amrollahi@gmail.com" data-zh="far.amrollahi@gmail.com">far.amrollahi@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <i data-lucide="linkedin"></i>
+                <div>
+                  <h5 class="small fw-semibold mb-0" data-en="LinkedIn" data-zh="领英">LinkedIn</h5>
+                  <p class="small text-muted mb-0">
+                    <a href="https://www.linkedin.com/in/farzaneh-amrollahi-859757163/" data-en="Farzaneh Amrollahi" data-zh="Farzaneh Amrollahi">Farzaneh Amrollahi</a>
+                  </p>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <i data-lucide="phone"></i>
+                <div>
+                  <h5 class="small fw-semibold mb-0" data-en="Phone" data-zh="电话">Phone</h5>
+                  <p class="small text-muted mb-0" data-en="(+86)17815622990" data-zh="(+86)17815622990">(+86)17815622990</p>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <i data-lucide="contact"></i>
+                <div>
+                  <h5 class="small fw-semibold mb-0" data-en="WeChat" data-zh="微信">WeChat</h5>
+                  <p class="small text-muted mb-0" data-en="Faren_am" data-zh="Faren_am">Faren_am</p>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <i data-lucide="map-pin"></i>
+                <div>
+                  <h5 class="small fw-semibold mb-0" data-en="Location" data-zh="地址">Location</h5>
+                  <p class="small text-muted mb-0" data-en="Ningbo, China" data-zh="中国宁波">Ningbo, China</p>
+                </div>
+              </div>
             </div>
 
-            <div>
-                <ul class="main text-white">
-                    <li>
-                        <i class="bi bi-instagram"> @farzaneh.amii</i>
-                    </li>
-                    <li>
-                        <i class="bi bi-instagram"> far.amrollahi@gmail.com</i>
-                    </li>
-                    <li>
-                        <i class="bi bi-instagram"> @farzaneh.amii</i>
-                    </li>
-                   </ul>
-               </div>
+             <!-- Contact Details List -->
+                        <!-- <div class="row g-4">
+                            
+                            <div class="col-md-6 col-lg-3">
+                                <div class="contact-detail-item">
+                                    <i data-lucide="mail"></i>
+                                    <div>
+                                        <h5 class="small fw-semibold mb-0">Email</h5>
+                                       <p class="small text-muted mb-0">far.amrollahi@gmail.com</p>  
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="col-md-6 col-lg-3">
+                                <div class="contact-detail-item">
+                                    <i data-lucide="linkedin"></i>
+                                    <div>
+                                        <h5 class="small fw-semibold mb-0">LinkedIn</h5>
+                                        <p class="small text-muted mb-0">hhhh</p>    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-3">
+                                <div class="contact-detail-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <div>
+                                        <h5 class="small fw-semibold mb-0">Location</h5>
+                                        <p class="small text-muted mb-0">China</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-3">
+                                <div class="contact-detail-item">
+                                    <i data-lucide="phone"></i>
+                                    <div>
+                                        <h5 class="small fw-semibold mb-0">Phone</h5>
+                                        <p class="small text-muted mb-0">uiuo </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> -->
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+          </div>
+          <footer class="text-center py-4 mt-5" style=" border-top: 1px solid #b0b0b0;">
+            <p class="footer" data-en="&copy; Designed by Farzaneh Amrollahi. All rights reserved." data-zh="&copy; 由Farzaneh Amrollahi设计和编写">&copy; Designed and Coded by Farzaneh Amrollahi</p>
+    </footer>
+        </div>
+        
+
+
+           
+           
+    </div>
+
+            
             
 
 
-        </div>
+      
         
         
       
-    </div>
+  
+ <!-- Script to initialize Lucide icons -->
+    <script>
+        // Form submission handler (Mocked since no backend exists)
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+            const formMessage = document.getElementById('formMessage');
+            
+            // Basic validation check (though 'required' attribute helps)
+            const form = document.getElementById('contactForm');
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                formMessage.textContent = "Please fill out all required fields.";
+                formMessage.className = 'mt-3 small text-center text-danger';
+                formMessage.style.display = 'block';
+                return;
+            }
 
+            // Simulate successful submission
+            formMessage.textContent = "Thank you! Your message has been sent successfully. I will respond soon.";
+            formMessage.className = 'mt-3 small text-center accent-text';
+            formMessage.style.display = 'block';
+            
+            // Optional: Clear the form after a delay
+            setTimeout(() => {
+                form.reset();
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Make sure the Lucide icons are initialized after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+          if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+          }
+        });
+    </script>
+
+    <script src="lang-switch.js"></script>
+<script>
+  // Add this to enable translation for elements with data-en/data-zh attributes
+  document.addEventListener('DOMContentLoaded', function() {
+    const langSwitch = document.getElementById("lang-switch");
+    let currentLang = "en";
+    langSwitch.addEventListener("click", function() {
+      currentLang = currentLang === "en" ? "zh" : "en";
+      document.querySelectorAll("[data-en][data-zh]").forEach(function(el) {
+        el.textContent = el.getAttribute("data-" + currentLang);
+      });
+      langSwitch.textContent = currentLang === "en" ? "中文" : "EN";
+    });
+  });
+</script>
        
 </body>
 
